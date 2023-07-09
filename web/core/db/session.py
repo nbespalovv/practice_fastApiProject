@@ -13,9 +13,9 @@ if exists(DOTENV_PATH):
 
 USER = getenv("DB_USER") or "root" #os.environ.get("POSTGRES_USER")
 PASSWORD = getenv("DB_PASSWORD") or "password" #os.environ.get("POSTGRES_PASSWORD")
-#DB_NAME = getenv("DB_NAME") or "" #os.environ.get("POSTGRES_DB")
+DB_NAME = getenv("DB_NAME") or "" #os.environ.get("POSTGRES_DB")
 HOST = getenv("DB_URL") or "localhost"
-DB_PORT = "kinorium"
+DB_PORT = "3306"
 
 db_url = f"mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{DB_PORT}/{DB_NAME}" #DB_NAME не нужен возможно, также в .env
 

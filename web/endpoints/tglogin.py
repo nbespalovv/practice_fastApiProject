@@ -16,12 +16,12 @@ from core.broker import session #заменить с ребита
 
 router = APIRouter(prefix="/tglogin")
 
-BOT_TOKEN = ''
+BOT_TOKEN = '6001783957:AAGjtyLX2728zncYkhCDMIq0_MsasMBtOY0'
 
 #Авторизация по тг#
 @router.get('/')
-def get_link(id: int, first_name: str, auth_date: int, hash: str, username: Optional[str] = Query(None), photo_url: Optional[str] = Query(None), db=Depends(get_db)):
-    fields = dict({"id": id, "first_name": first_name, 'username': username, 'photo_url': photo_url, 'auth_date': auth_date, 'hash': hash})
+def get_link(id: int, first_name: str, auth_date: int, hash: str,  last_name: Optional[str] = Query(None),  username: Optional[str] = Query(None), photo_url: Optional[str] = Query(None), db=Depends(get_db)):
+    fields = dict({"id": id, "first_name": first_name, 'username': username, 'photo_url': photo_url, 'auth_date': auth_date, 'hash': hash, 'last_name': last_name})
     hash = fields.pop('hash')
     auth_date = fields.get('auth_date')
     id = fields.get('id')
